@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Pet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div class="mb-4">
+    <form th:object="${petDto}" action="/addPet" method="post"
+          style="max-width: 640px; margin: 0 auto; text-align: left;">
+        <div class="mb-3">
+            <label class="form-label" for="name">Pet name</label>
+            <input th:field="*{name}" type="text" class="form-control" id="name" placeholder="Pet name" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="specie">Pet specie</label>
+            <select th:field="*{specie}" class="form-control" id="specie">
+                <option th:each="specie : ${T(com.sda.vetClinic.enums.Specie).values()}"
+                        th:value="${specie}" th:text="${specie}"></option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="breed">Pet breed</label>
+            <input th:field="*{breed}" type="text" class="form-control" id="breed" placeholder="Pet breed">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="gender">Pet gender</label>
+            <select th:field="*{gender}" class="form-control" id="gender">
+                <option th:each="gender : ${T(com.sda.vetClinic.enums.Gender).values()}"
+                        th:value="${gender}" th:text="${gender}"></option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="dateOfBirth">Pet's birthday</label>
+            <input th:field="*{dateOfBirth}" type="date" class="form-control" id="dateOfBirth"
+                   placeholder="Pet's birthday">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Add Pet</button>
+    </form>
+</div>
+</body>
+</html>
