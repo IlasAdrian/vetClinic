@@ -1,0 +1,66 @@
+.error{
+    color: red;
+    font-size: 10px;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #cccccc;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form-group button {
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+
+
+}
+.form-group.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    /*background-image: url('../img/image_3.jpg');*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Alte proprietăți CSS pentru a personaliza imaginea de fundal */
+}
