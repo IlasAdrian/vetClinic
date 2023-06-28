@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="/css/registrationStyle.css">
+    <link rel="stylesheet" th:href="@{/css/menuStyle.css}" href="../static/css/menuStyle.css"/>
+</head>
+<body>
+<div th:insert="~{menu.html :: body}"></div>
+<h1 style= "color: black; font-weight: bold;">Registration</h1>
+
+<div class="container">
+    <form th:object="${userDto}" action="/registration" method="post"
+          style="max-width: 640px; margin: 0 auto; text-align: left;">
+        <div class="form-group">
+            <label class="form-label" for="firstname">First name</label>
+            <input th:field="*{firstname}" type="text" class="form-control" id="firstname" placeholder="firstname" required>
+            <p th:each="error : ${#fields.errors('firstname')}" th:text="${error}" class="error"></p>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="lastname">Last name</label>
+            <input th:field="*{lastname}" type="text" class="form-control" id="lastname" placeholder="lastname" required>
+            <p th:each="error : ${#fields.errors('lastname')}" th:text="${error}" class="error"></p>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input th:field="*{email}" type="email" class="form-control" id="email" placeholder="email" required>
+            <p th:each="error : ${#fields.errors('email')}" th:text="${error}" class="error"></p>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <input th:field="*{password}" type="password" class="form-control" id="password" placeholder="password" required>
+            <p th:each="error : ${#fields.errors('password')}" th:text="${error}" class="error"></p>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="phoneNumber">Phone Number</label>
+            <input th:field="*{phoneNumber}" type="text" class="form-control" id="phoneNumber" placeholder="phoneNumber" required>
+            <p th:each="error : ${#fields.errors('phoneNumber')}" th:text="${error}" class="error"></p>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="dateOfBirth">Date of Birth</label>
+            <input th:field="*{dateOfBirth}" type="date" class="form-control" id="dateOfBirth"
+                   placeholder="dateOfBirth" required>
+            <p th:each="error : ${#fields.errors('dateOfBirth')}" th:text="${error}" class="error"></p>
+        </div>
+        <div class="form-group role-selector">
+            <label class="form-label" for="role">Role</label>
+            <select th:field="*{role}" class="form-control" id="role" required>
+                <option th:each="role : ${T(com.sda.vetClinic.enums.Role).values()}"
+                        th:value="${role}" th:text="${role}"></option>
+            </select>
+            <p th:each="error : ${#fields.errors('role')}" th:text="${error}" class="error"></p>
+        </div>
+
+        <div class="form-group button-container">
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

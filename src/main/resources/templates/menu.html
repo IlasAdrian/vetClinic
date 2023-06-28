@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Menu</title>
+    <link rel="stylesheet" type="text/css" href="/css/menuStyle.css">
+</head>
+<body>
+<nav>
+    <p style= "color: black; font-weight: bold; text-align: center"  th:text="${requestUrl}"></p>
+    <ul>
+        <li sec:authorize="isAuthenticated()" th:classappend="${requestUrl == '/home' ? 'active' : ''}" ><a href="/home">Home</a></li>
+        <li sec:authorize="hasRole('OWNER')" th:classappend="${requestUrl == '/addPet' ? 'active' : ''}" ><a href="/addPet">Add a new pet</a></li>
+        <li sec:authorize="isAnonymous()" th:classappend="${requestUrl == '/registration' ? 'active' : ''}" ><a href="/registration">Registration</a></li>
+        <li sec:authorize="isAnonymous()" th:classappend="${requestUrl == '/login' ? 'active' : ''}" ><a href="/login">Login</a></li>
+        <li sec:authorize="isAuthenticated()" ><a href="/logout">Logout</a></li>
+    </ul>
+</nav>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet"  href="/css/menuStyle.css"/>
+    <link rel="stylesheet" th:href="@{/css/menuStyle.css}" href="../static/css/menuStyle.css"/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/img/image_1.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* Alte proprietăți CSS pentru a personaliza imaginea de fundal */
+        }
+
+    </style>
+</head>
+<body>
+<div th:insert="~{menu.html :: body}"></div>
+<h1 style= "color: black; font-weight: bold;">Home</h1>
+</body>
+</html>

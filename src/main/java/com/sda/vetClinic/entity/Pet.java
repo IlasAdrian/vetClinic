@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -25,6 +26,11 @@ public class Pet {
     @Enumerated(value = EnumType.STRING)
     private Gender gender;
     private LocalDate dateOfBirth;
+    @ManyToOne
+    @JoinColumn
+    private User owner;
+    @OneToMany(mappedBy = "pet")
+    private List<Appointment> appointments;
 
 
 }
