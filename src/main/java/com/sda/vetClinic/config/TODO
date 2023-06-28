@@ -1,0 +1,13 @@
+
+TODO:
+
+-OWNER: -view pets
+        -view appointments
+        -edit appointment's feedback/review/rate
+
+-VET: -view appointments
+      -take appointment
+      -edit appointment's status
+
+-auto owner's email & pet's id & vet's id
+-validators

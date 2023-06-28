@@ -3,10 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Appointment</title>
-  <link rel="stylesheet" type="text/css" href="/css/addPetStyle.css">
-  <link rel="stylesheet" th:href="@{/css/menuStyle.css}" href="../static/css/menuStyle.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/addPetStyle.css">
+    <link rel="stylesheet" th:href="@{/css/menuStyle.css}" href="../static/css/menuStyle.css"/>
 </head>
 <body>
-This is the Add Appointment Page
+
+<div th:insert="~{menu.html :: body}"></div>
+<h1 style="color: black; font-weight: bold;">Add Appointment</h1>
+
+<div class="container">
+    <form th:object="${appointmentDto}" action="/addAppointment" method="post"
+          style="max-width: 640px; margin: 0 auto; text-align: left;">
+        <div class="form-group">
+            <label class="form-label" for="petId">Pet's Id</label>
+            <input th:field="*{petId}" type="text" class="form-control" id="petId" placeholder="Pet's Id" required>
+        </div>
+        <div class="form-group role-selector">
+            <label class="form-label" for="type">Appointment's type</label>
+            <select th:field="*{type}" class="form-control" id="type">
+                <option th:each="type : ${T(com.sda.vetClinic.enums.Type).values()}"
+                        th:value="${type}" th:text="${type}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="description">Description</label>
+            <input th:field="*{description}" type="text" class="form-control" id="description" placeholder="Description">
+        </div>
+        <div class="form-group button-container">
+            <button type="submit">Add an appointment</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>

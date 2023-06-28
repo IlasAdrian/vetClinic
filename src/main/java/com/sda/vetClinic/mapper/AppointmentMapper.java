@@ -4,6 +4,7 @@ import com.sda.vetClinic.dto.AppointmentDto;
 import com.sda.vetClinic.entity.Appointment;
 import com.sda.vetClinic.entity.Pet;
 import com.sda.vetClinic.entity.User;
+import com.sda.vetClinic.enums.Status;
 import com.sda.vetClinic.enums.Type;
 import com.sda.vetClinic.repository.PetRepository;
 import com.sda.vetClinic.repository.UserRepository;
@@ -32,8 +33,7 @@ public class AppointmentMapper {
                 .pet(optionalPet.get())
                 .type(Type.valueOf(appointmentDto.getType()))
                 .description((appointmentDto.getDescription()))
-                .vet(optionalUser.get())
-                .date(LocalDate.parse(appointmentDto.getDate()))
+                .status(Status.FREE)
                 .build();
     }
 }
