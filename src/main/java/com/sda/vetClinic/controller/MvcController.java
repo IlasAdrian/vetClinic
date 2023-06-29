@@ -1,7 +1,6 @@
 package com.sda.vetClinic.controller;
 
 import com.sda.vetClinic.dto.AppointmentDto;
-import com.sda.vetClinic.dto.LoginDto;
 import com.sda.vetClinic.dto.PetDto;
 import com.sda.vetClinic.dto.UserDto;
 //import com.sda.vetClinic.service.LoginService;
@@ -13,12 +12,15 @@ import com.sda.vetClinic.validator.PetValidator;
 import com.sda.vetClinic.validator.UserValidator;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class MvcController {
@@ -80,7 +82,7 @@ public class MvcController {
         model.addAttribute("appointmentDto", new AppointmentDto());
         return "addAppointment";
     }
-    @PostMapping
+    @PostMapping("/addAppointment")
     public String addAppointmentPost(@ModelAttribute(name = "appointmentDto") @Valid AppointmentDto appointmentDto, BindingResult bindingResult){
         appointmentValidator.validate(appointmentDto, bindingResult);
         if(bindingResult.hasErrors()){
@@ -88,5 +90,24 @@ public class MvcController {
         }
         appointmentService.addAppointment(appointmentDto);
         return "redirect:/addAppointment";
+    }
+
+
+    @GetMapping("/viewPet")
+    public String viewPetGet(Model model, Authentication authentication){
+        List<PetDto> dtoPets = petService.getPetDtoListByOwnerEmail(authentication.getName());
+        model.addAttribute("dtoPets",dtoPets);
+        System.out.println(dtoPets);
+        return "viewPet";
+    }
+
+
+
+    @GetMapping("/viewAppointments")
+    public String viewAppointmentGet(Model model, Authentication  authentication){
+        List<AppointmentDto> dtoAppointments = appointmentService.getAppointmentDtoListByOwnerEmail(authentication.getName());
+        model.addAttribute("dtoAppointments",dtoAppointments);
+        System.out.println(dtoAppointments);
+        return "viewAppointments";
     }
 }

@@ -1,5 +1,6 @@
 package com.sda.vetClinic.entity;
 
+import com.sda.vetClinic.enums.Status;
 import com.sda.vetClinic.enums.Type;
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,6 +24,8 @@ public class Appointment {
     @Enumerated(value = EnumType.STRING)
     private Type type;
     private String description;
+    @Enumerated(value = EnumType.STRING)
+    private Status status;
     @ManyToOne
     @JoinColumn
     private User vet;

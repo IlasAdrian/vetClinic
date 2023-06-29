@@ -180,29 +180,10 @@ public class UserValidator {
     }
 
     private void validateRole(UserDto userDto, BindingResult bindingResult) {
-//        if (validateRoleNotEmpty(userDto, bindingResult)) return;
         validateRoleFormat(userDto, bindingResult);
     }
 
-//    private boolean validateRoleNotEmpty(UserDto userDto, BindingResult bindingResult) {
-//        if (userDto.getDateOfBirth().isEmpty()) {
-//            FieldError fieldError = new FieldError("userDto", "role",
-//                    "Role should not be empty");
-//            bindingResult.addError(fieldError);
-//            return true;
-//        }
-//        return false;
-//    }
-
     private void validateRoleFormat(UserDto userDto, BindingResult bindingResult) {
-//        for (Role role : Role.values()) {
-//            if (!userDto.getRole().equals(String.valueOf(role))){
-//                FieldError fieldError = new FieldError("userDto", "role",
-//                        "Wrong role format!");
-//                bindingResult.addError(fieldError);
-//
-//            }
-//        }
         try{
             Role.valueOf(userDto.getRole());
         } catch (Exception e){
