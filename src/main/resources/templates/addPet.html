@@ -16,36 +16,39 @@
         <div class="form-group">
             <label class="form-label" for="ownerEmail">Owner's email</label>
             <input th:field="*{ownerEmail}" type="email" class="form-control" id="ownerEmail" placeholder="Owner's Email" required>
+            <p th:each="error : ${#fields.errors('ownerEmail')}" th:text="${error}" class="error"></p>
         </div>
         <div class="form-group">
             <label class="form-label" for="name">Pet name</label>
-            <input th:field="*{name}" type="text" class="form-control" id="name" placeholder="Pet name" required>
+            <input th:field="*{name}" type="text" class="form-control" id="name" placeholder="Name" required>
+            <p th:each="error : ${#fields.errors('name')}" th:text="${error}" class="error"></p>
         </div>
         <div class="form-group role-selector">
-            <label class="form-label" for="specie">Pet specie</label>
+            <label class="form-label" for="specie">Specie</label>
             <select th:field="*{specie}" class="form-control" id="specie">
                 <option th:each="specie : ${T(com.sda.vetClinic.enums.Specie).values()}"
                         th:value="${specie}" th:text="${specie}"></option>
             </select>
+            <p th:each="error : ${#fields.errors('specie')}" th:text="${error}" class="error"></p>
         </div>
-
         <div class="form-group">
-            <label class="form-label" for="breed">Pet breed</label>
-            <input th:field="*{breed}" type="text" class="form-control" id="breed" placeholder="Pet breed">
+            <label class="form-label" for="breed">Breed</label>
+            <input th:field="*{breed}" type="text" class="form-control" id="breed" placeholder="Breed">
+            <p th:each="error : ${#fields.errors('breed')}" th:text="${error}" class="error"></p>
         </div>
         <div class="form-group role-selector">
-            <label class="form-label" for="gender">Pet gender</label>
+            <label class="form-label" for="gender">Gender</label>
             <select th:field="*{gender}" class="form-control" id="gender">
                 <option th:each="gender : ${T(com.sda.vetClinic.enums.Gender).values()}"
                         th:value="${gender}" th:text="${gender}"></option>
             </select>
+            <p th:each="error : ${#fields.errors('gender')}" th:text="${error}" class="error"></p>
         </div>
         <div class="form-group">
             <label class="form-label" for="dateOfBirth">Pet's birthday</label>
-            <input th:field="*{dateOfBirth}" type="date" class="form-control" id="dateOfBirth"
-                   placeholder="Pet's birthday">
+            <input th:field="*{dateOfBirth}" type="date" class="form-control" id="dateOfBirth" placeholder="Pet's birthday">
+            <p th:each="error : ${#fields.errors('dateOfBirth')}" th:text="${error}" class="error"></p>
         </div>
-
 
         <div class="form-group button-container">
             <button type="submit">Add your pet</button>

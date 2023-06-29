@@ -26,9 +26,10 @@ public class SecurityConfig {
             auth.requestMatchers("/css/*").permitAll();
             auth.requestMatchers("/img/*").permitAll();
 
-            auth.requestMatchers("/addPet").hasAnyRole("OWNER", "VET");
-
-          auth.requestMatchers("/addAppointment").hasRole("OWNER");
+            auth.requestMatchers("/addPet").hasRole("OWNER");
+            auth.requestMatchers("/viewPet").hasRole("OWNER");
+            auth.requestMatchers("/addAppointment").hasRole("OWNER");
+            auth.requestMatchers("/viewAppointments").hasRole("OWNER");
 
 
         }).httpBasic();
@@ -36,10 +37,8 @@ public class SecurityConfig {
                 .formLogin()
                 .loginPage("/login").defaultSuccessUrl("/home").permitAll()
                 .and().logout().permitAll()
-
                 .and().csrf().disable().authorizeHttpRequests()
-                .and()
-                .cors().disable().authorizeHttpRequests();
+                .and().cors().disable().authorizeHttpRequests();
 
         return httpSecurity.build();
     }
