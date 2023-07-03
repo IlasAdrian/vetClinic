@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class MvcController {
@@ -37,8 +36,9 @@ public class MvcController {
     private PetValidator petValidator;
     @Autowired
     private AppointmentValidator appointmentValidator;
+
     @GetMapping("/home")
-    public String homeGet(Model model){
+    public String homeGet(Model model) {
         return "home";
     }
 
@@ -50,7 +50,7 @@ public class MvcController {
     }
 
     @PostMapping("/registration")
-    public String registrationPost(@ModelAttribute(name = "userDto")  @Valid UserDto userDto, BindingResult bindingResult) {
+    public String registrationPost(@ModelAttribute(name = "userDto") @Valid UserDto userDto, BindingResult bindingResult) {
         userValidator.validate(userDto, bindingResult);
         if (bindingResult.hasErrors()) {
             return "registration";
@@ -58,6 +58,7 @@ public class MvcController {
         userService.addUser(userDto);
         return "redirect:/registration";
     }
+
     @GetMapping("/login")
     public String loginGet(Model model) {
         return "login";
@@ -79,8 +80,9 @@ public class MvcController {
         petService.addPet(petDto);
         return "redirect:/addPet";
     }
+
     @GetMapping("/addAppointment")
-    public String addAppointmentGet(Model model, Authentication authentication){
+    public String addAppointmentGet(Model model, Authentication authentication) {
         model.addAttribute("appointmentDto", new AppointmentDto());
 
         List<String> petNames = petService.getPetNameListByOwnerEmail(authentication.getName());
@@ -88,12 +90,13 @@ public class MvcController {
 
         return "addAppointment";
     }
+
     @PostMapping("/addAppointment")
-    public String addAppointmentPost(@ModelAttribute(name = "appointmentDto") @Valid AppointmentDto appointmentDto, BindingResult bindingResult){
+    public String addAppointmentPost(@ModelAttribute(name = "appointmentDto") @Valid AppointmentDto appointmentDto, BindingResult bindingResult) {
         appointmentDto.setPetId(petService.GetPetIdByName(appointmentDto.getPetId()));
         appointmentValidator.validate(appointmentDto, bindingResult);
-        if(bindingResult.hasErrors()){
-            return"addAppointment";
+        if (bindingResult.hasErrors()) {
+            return "addAppointment";
         }
         appointmentService.addAppointment(appointmentDto);
         return "redirect:/addAppointment";
@@ -101,40 +104,66 @@ public class MvcController {
 
 
     @GetMapping("/pets")
-    public String viewPetGet(Model model, Authentication authentication){
+    public String viewPetGet(Model model, Authentication authentication) {
         List<PetDto> dtoPets = petService.getPetDtoListByOwnerEmail(authentication.getName());
-        model.addAttribute("dtoPets",dtoPets);
+        model.addAttribute("dtoPets", dtoPets);
         return "pets";
     }
+
     @GetMapping("/viewPet/{petId}")
-    public String viewPetGet(@PathVariable(value = "petId") String petId, Model model){
+    public String viewPetGet(@PathVariable(value = "petId") String petId, Model model) {
         PetDto petDto = petService.getPetDtoById(petId);
         model.addAttribute("petDto", petDto);
 
-        model.addAttribute("petId",petId);
+        model.addAttribute("petId", petId);
 
         List<AppointmentDto> dtoAppointments = appointmentService.getAppointmentDtoListByPetId(petId);
-        model.addAttribute("dtoAppointments",dtoAppointments);
+        model.addAttribute("dtoAppointments", dtoAppointments);
         return "viewPet";
     }
 
 
-
     @GetMapping("/appointments")
-    public String viewAppointmentGet(Model model, Authentication  authentication){
+    public String viewAppointmentGet(Model model, Authentication authentication) {
         List<AppointmentDto> dtoAppointments = appointmentService.getAppointmentDtoListByOwnerEmail(authentication.getName());
-        model.addAttribute("dtoAppointments",dtoAppointments);
+        model.addAttribute("dtoAppointments", dtoAppointments);
         return "appointments";
     }
+
     @GetMapping("/appointmentList")
-    public String editAppointmentGet(Model model){
+    public String editAppointmentGet(Model model) {
         List<AppointmentDto> dtoAppointments = appointmentService.getAllAppointments();
-        model.addAttribute("dtoAppointments",dtoAppointments);
+        model.addAttribute("dtoAppointments", dtoAppointments);
+
+        model.addAttribute("editDtoAppointment", new AppointmentDto());
         return "appointmentList";
     }
-    @PostMapping("/appointmentList")
-    public String editAppointmentPost(Model model, Authentication authentication){
 
+    @PostMapping("/appointmentList/{appointmentId}")
+    public String editAppointmentPost(@PathVariable(value = "appointmentId") String appointmentId,
+                                      AppointmentDto editDtoAppointment, Authentication authentication) {
+        appointmentService.editAppointment(appointmentId, editDtoAppointment.getDate(), authentication.getName());
         return "redirect:/appointmentList";
+    }
+
+    @GetMapping("/viewAppointment/{appointmentId}")
+    public String viewAppointmentGet(@PathVariable(value = "appointmentId") String appointmentId, Model model) {
+        AppointmentDto appointmentDto = appointmentService.getAppointmentDtoById(appointmentId);
+        model.addAttribute("appointmentDto", appointmentDto);
+
+        PetDto petDto = petService.getPetDtoById(appointmentDto.getPetId());
+        model.addAttribute("petDto", petDto);
+
+        model.addAttribute("editDtoAppointment", new AppointmentDto());
+        return "viewAppointment";
+    }
+
+    @PostMapping("/viewAppointment/{appointmentId}")
+    public String editAppointmentPost(@PathVariable(value = "appointmentId") String appointmentId, String description,
+                                      String status, String date, Model model) {
+        AppointmentDto editDtoAppointment = appointmentService.getAppointmentDtoById(appointmentId);
+        appointmentService.editAppointment(appointmentId, description, status, date);
+        model.addAttribute("editDtoAppointment", editDtoAppointment);
+        return "redirect:/viewAppointment/{appointmentId}";
     }
 }

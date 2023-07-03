@@ -11,7 +11,7 @@
 <h1 style= "color: black; font-weight: bold;">Pets</h1>
 
     <div class="pet" th:each="petDto:${dtoPets}">
-        <h2 th:text="${petDto.name}"></h2>
+        <a th:text="${petDto.name}" th:href="@{/viewPet/{x}(x=${petDto.petId})}"></a>
         <p class="specie" th:text="${petDto.specie}"></p>
         <p class="breed" th:text="${petDto.breed}"></p>
         <p class="gender" th:text="${petDto.gender}"></p>

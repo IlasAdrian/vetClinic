@@ -40,4 +40,7 @@ public class UserService {
         UserDto userDto = userMapper.map(user);
         return Optional.of(userDto);
     }
+    public User getUserByEmail(String email){
+        return userRepository.findUserByEmail(email);
+    }
 }

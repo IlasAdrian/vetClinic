@@ -35,6 +35,7 @@ public class PetMapper {
     }
     public PetDto map(Pet pet){
         return PetDto.builder()
+                .petId(String.valueOf(pet.getId()))
                 .ownerEmail(pet.getOwner().getEmail())
                 .name(pet.getName())
                 .specie(pet.getSpecie().toString())

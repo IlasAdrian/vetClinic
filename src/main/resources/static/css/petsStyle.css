@@ -10,8 +10,9 @@
 }
 
 
-.pet h2 {
+.pet a {
     color: black;
+    font-size: 30px;
 }
 
 .pet .specie {

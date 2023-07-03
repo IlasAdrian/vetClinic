@@ -14,7 +14,6 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-@ToString
 public class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

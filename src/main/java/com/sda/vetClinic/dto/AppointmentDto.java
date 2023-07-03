@@ -10,7 +10,9 @@ import lombok.*;
 @Builder
 @ToString
 public class AppointmentDto {
+    private String id;
     private String petId;
+    private String petName;
     private String type;
     private String description;
     private String status;

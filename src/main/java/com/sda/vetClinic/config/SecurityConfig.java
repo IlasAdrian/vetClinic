@@ -32,8 +32,10 @@ public class SecurityConfig {
             auth.requestMatchers("/appointments").hasRole("OWNER");
 
             auth.requestMatchers("/appointmentList").hasRole("VET");
+            auth.requestMatchers("/appointmentList/*").hasRole("VET");
 
             auth.requestMatchers("/viewPet/*").hasAnyRole("OWNER","VET");
+            auth.requestMatchers("/viewAppointment/*").hasAnyRole("OWNER","VET");
 
 
         }).httpBasic();

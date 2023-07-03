@@ -38,10 +38,14 @@ public class AppointmentMapper {
 
     public AppointmentDto map(Appointment appointment) {
         return AppointmentDto.builder()
+                .id(String.valueOf(appointment.getId()))
                 .petId(String.valueOf(appointment.getPet().getId()))
+                .petName(appointment.getPet().getName())
                 .type(appointment.getType().toString())
                 .description(appointment.getDescription())
                 .status(appointment.getStatus().toString())
+                .date(appointment.getDate()!=null ? String.valueOf(appointment.getDate()) : "")
+                .vetId(appointment.getVet()!=null ? String.valueOf(appointment.getVet().getId()) : "")
                 .build();
     }
 
