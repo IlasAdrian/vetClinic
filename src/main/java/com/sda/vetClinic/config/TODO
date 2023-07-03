@@ -7,7 +7,7 @@ TODO:
       -take appointment
       -edit appointment's status
 
--autowired owner's email & pet's id & vet's id
+-pet's id & vet's id
 -tests
 
 -validators

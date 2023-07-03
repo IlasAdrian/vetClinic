@@ -1,13 +1,9 @@
 package com.sda.vetClinic.service;
 
 import com.sda.vetClinic.dto.AppointmentDto;
-import com.sda.vetClinic.dto.PetDto;
 import com.sda.vetClinic.entity.Appointment;
-import com.sda.vetClinic.entity.Pet;
-import com.sda.vetClinic.entity.User;
 import com.sda.vetClinic.mapper.AppointmentMapper;
 import com.sda.vetClinic.repository.AppointmentRepository;
-import com.sda.vetClinic.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,5 +27,15 @@ public class AppointmentService {
         List<Appointment> appointments = appointmentRepository.findByPetOwnerEmail(ownerEmail);
         return appointmentMapper.map(appointments);
 
+    }
+
+    public List<AppointmentDto> getAllAppointments() {
+        List<Appointment> appointments = appointmentRepository.findAll();
+        return appointmentMapper.map(appointments);
+    }
+
+    public List<AppointmentDto> getAppointmentDtoListByPetId(String petId) {
+        List<Appointment> appointments = appointmentRepository.findByPetId(petId);
+        return appointmentMapper.map(appointments);
     }
 }

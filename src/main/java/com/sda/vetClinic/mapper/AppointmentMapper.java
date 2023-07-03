@@ -28,10 +28,6 @@ public class AppointmentMapper {
         if (optionalPet.isEmpty()) {
             throw new RuntimeException("No pet found");
         }
-//        Optional<User> optionalUser = userRepository.findById(appointmentDto.getVetId());
-//        if(optionalUser.isEmpty()){
-//            throw new RuntimeException("No vet found");
-//        }
         return Appointment.builder()
                 .pet(optionalPet.get())
                 .type(Type.valueOf(appointmentDto.getType()))

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Appointments</title>
+    <link rel="stylesheet" type="text/css" href="/css/appointmentsStyle.css">
+    <link rel="stylesheet" th:href="@{/css/menuStyle.css}" href="../static/css/menuStyle.css"/>
+</head>
+<body>
+<div th:insert="~{menu.html :: body}"></div>
+<h1 style= "color: black; font-weight: bold;">Appointments</h1>
+
+    <div class="appointment" th:each="dtoAppointment : ${dtoAppointments}">
+        <h2 th:text="${dtoAppointment.petId}"></h2>
+        <p class="type" th:text="${dtoAppointment.type}"></p>
+        <p class="description" th:text="${dtoAppointment.description}"></p>
+        <p class="status" th:text="${dtoAppointment.status}"></p>
+        <p class="vetId" th:text="${dtoAppointment.vetId}"></p>
+        <p class="date" th:text="${dtoAppointment.date}"></p>
+
+        Edit:
+<!--        <form th:object="${dtoAppointment}" action="/appointmentList" method="post"-->
+<!--              style="max-width: 640px; margin: 0 auto; text-align: left;">-->
+<!--            <div class="form-group">-->
+<!--                <label class="form-label" for="date">Date</label>-->
+<!--                <input th:field="${dtoAppointment.setDate()}" type="date" class="form-control" id="date"-->
+<!--                       placeholder="date">-->
+<!--                <p th:each="error : ${#fields.errors('date')}" th:text="${error}" class="error"></p>-->
+<!--            </div>-->
+<!--            <div class="form-group button-container">-->
+<!--                <button type="submit">Add date</button>-->
+<!--            </div>-->
+<!--        </form>-->
+    </div>
+</body>
+</html>

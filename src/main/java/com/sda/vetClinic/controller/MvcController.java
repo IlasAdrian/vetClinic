@@ -3,7 +3,6 @@ package com.sda.vetClinic.controller;
 import com.sda.vetClinic.dto.AppointmentDto;
 import com.sda.vetClinic.dto.PetDto;
 import com.sda.vetClinic.dto.UserDto;
-//import com.sda.vetClinic.service.LoginService;
 import com.sda.vetClinic.service.AppointmentService;
 import com.sda.vetClinic.service.PetService;
 import com.sda.vetClinic.service.UserService;
@@ -18,9 +17,11 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class MvcController {
@@ -69,7 +70,8 @@ public class MvcController {
     }
 
     @PostMapping("/addPet")
-    public String addPetPost(@ModelAttribute(name = "petDto") @Valid PetDto petDto, BindingResult bindingResult) {
+    public String addPetPost(@ModelAttribute(name = "petDto") @Valid PetDto petDto, BindingResult bindingResult, Authentication authentication) {
+        petDto.setOwnerEmail(authentication.getName());
         petValidator.validate(petDto, bindingResult);
         if (bindingResult.hasErrors()) {
             return "addPet";
@@ -78,12 +80,17 @@ public class MvcController {
         return "redirect:/addPet";
     }
     @GetMapping("/addAppointment")
-    public String addAppointmentGet(Model model){
+    public String addAppointmentGet(Model model, Authentication authentication){
         model.addAttribute("appointmentDto", new AppointmentDto());
+
+        List<String> petNames = petService.getPetNameListByOwnerEmail(authentication.getName());
+        model.addAttribute("petNameList", petNames);
+
         return "addAppointment";
     }
     @PostMapping("/addAppointment")
     public String addAppointmentPost(@ModelAttribute(name = "appointmentDto") @Valid AppointmentDto appointmentDto, BindingResult bindingResult){
+        appointmentDto.setPetId(petService.GetPetIdByName(appointmentDto.getPetId()));
         appointmentValidator.validate(appointmentDto, bindingResult);
         if(bindingResult.hasErrors()){
             return"addAppointment";
@@ -93,21 +100,41 @@ public class MvcController {
     }
 
 
-    @GetMapping("/viewPet")
+    @GetMapping("/pets")
     public String viewPetGet(Model model, Authentication authentication){
         List<PetDto> dtoPets = petService.getPetDtoListByOwnerEmail(authentication.getName());
         model.addAttribute("dtoPets",dtoPets);
-        System.out.println(dtoPets);
+        return "pets";
+    }
+    @GetMapping("/viewPet/{petId}")
+    public String viewPetGet(@PathVariable(value = "petId") String petId, Model model){
+        PetDto petDto = petService.getPetDtoById(petId);
+        model.addAttribute("petDto", petDto);
+
+        model.addAttribute("petId",petId);
+
+        List<AppointmentDto> dtoAppointments = appointmentService.getAppointmentDtoListByPetId(petId);
+        model.addAttribute("dtoAppointments",dtoAppointments);
         return "viewPet";
     }
 
 
 
-    @GetMapping("/viewAppointments")
+    @GetMapping("/appointments")
     public String viewAppointmentGet(Model model, Authentication  authentication){
         List<AppointmentDto> dtoAppointments = appointmentService.getAppointmentDtoListByOwnerEmail(authentication.getName());
         model.addAttribute("dtoAppointments",dtoAppointments);
-        System.out.println(dtoAppointments);
-        return "viewAppointments";
+        return "appointments";
+    }
+    @GetMapping("/appointmentList")
+    public String editAppointmentGet(Model model){
+        List<AppointmentDto> dtoAppointments = appointmentService.getAllAppointments();
+        model.addAttribute("dtoAppointments",dtoAppointments);
+        return "appointmentList";
+    }
+    @PostMapping("/appointmentList")
+    public String editAppointmentPost(Model model, Authentication authentication){
+
+        return "redirect:/appointmentList";
     }
 }

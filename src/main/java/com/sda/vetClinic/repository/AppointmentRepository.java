@@ -8,4 +8,7 @@ import java.util.List;
 import java.util.Optional;
 public interface AppointmentRepository extends CrudRepository<Appointment, Long> {
     List<Appointment> findByPetOwnerEmail(String ownerEmail);
+    List<Appointment> findAll();
+
+    List<Appointment> findByPetId(String petId);
 }

@@ -32,4 +32,14 @@ public class PetService {
                 .map(Pet::getName)
                 .toList();
     }
+
+    public String GetPetIdByName(String name) {
+        Pet pet = petRepository.findByName(name);
+        return String.valueOf(pet.getId());
+    }
+
+    public PetDto getPetDtoById(String petId) {
+        Pet pet = petRepository.findPetById(petId);
+        return petMapper.map(pet);
+    }
 }

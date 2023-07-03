@@ -10,4 +10,7 @@ import java.util.Optional;
 public interface PetRepository extends CrudRepository<Pet, Long> {
     List<Pet> findByOwnerEmail(String email);
     Optional<Pet> findById(String id);
+    Pet findPetById(String id);
+    Pet findByName(String name);
+
 }
