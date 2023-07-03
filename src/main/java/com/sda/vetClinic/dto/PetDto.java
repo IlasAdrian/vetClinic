@@ -9,6 +9,7 @@ import lombok.*;
 @Builder
 @ToString
 public class PetDto {
+    private String petId;
     private String ownerEmail;
     private String name;
     private String specie;

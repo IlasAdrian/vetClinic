@@ -31,11 +31,11 @@ public class PetMapper {
                 .gender(Gender.valueOf(petDto.getGender()))
                 .dateOfBirth(LocalDate.parse(petDto.getDateOfBirth()))
                 .owner(optionalUser.get())
-//                .appointments(null)
                 .build();
     }
     public PetDto map(Pet pet){
         return PetDto.builder()
+                .petId(String.valueOf(pet.getId()))
                 .ownerEmail(pet.getOwner().getEmail())
                 .name(pet.getName())
                 .specie(pet.getSpecie().toString())

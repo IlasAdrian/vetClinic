@@ -2,22 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>View Pets</title>
+    <title>ViewPet</title>
     <link rel="stylesheet" type="text/css" href="/css/viewPetStyle.css">
     <link rel="stylesheet" th:href="@{/css/menuStyle.css}" href="../static/css/menuStyle.css"/>
 </head>
 <body>
 <div th:insert="~{menu.html :: body}"></div>
-<h1 style= "color: black; font-weight: bold;">View Pet</h1>
 
-    <div class="pet" th:each="petDto:${dtoPets}">
-        <h2 th:text="${petDto.name}"></h2>
-        <p class="specie" th:text="${petDto.specie}"></p>
-        <p class="breed" th:text="${petDto.breed}"></p>
-        <p class="gender" th:text="${petDto.gender}"></p>
-        <p class="dateOfBirth" th:text="${petDto.dateOfBirth}"></p>
+<div class="pet" th:object="${petDto}">
+    <h2 th:text="${petDto.name}"></h2>
+    <p class="specie" th:text="${petDto.specie}"></p>
+    <p class="breed" th:text="${petDto.breed}"></p>
+    <p class="gender" th:text="${petDto.gender}"></p>
+    <p class="dateOfBirth" th:text="${petDto.dateOfBirth}"></p>
+    <p class="id" th:text="${petId}"></p>
+</div>
 
+<div class="appointment" th:each="dtoAppointment : ${dtoAppointments}">
+    <p class="type" th:text="${dtoAppointment.type}"></p>
+    <p class="description" th:text="${dtoAppointment.description}"></p>
+    <p class="status" th:text="${dtoAppointment.status}"></p>
+    <p class="vetId" th:text="${dtoAppointment.vetId}"></p>
+    <p class="date" th:text="${dtoAppointment.date}"></p>
+</div>
 
-    </div>
 </body>
 </html>

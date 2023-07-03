@@ -15,8 +15,11 @@
     <form th:object="${appointmentDto}" action="/addAppointment" method="post"
           style="max-width: 640px; margin: 0 auto; text-align: left;">
         <div class="form-group">
-            <label class="form-label" for="petId">Pet's Id</label>
-            <input th:field="*{petId}" type="text" class="form-control" id="petId" placeholder="Pet's Id" required>
+            <label class="form-label" for="petName">Pet's Name</label>
+            <select  th:field="*{petId}" class="form-control" id="petName">
+                <option th:each="pet : ${petNameList}"
+                        th:value="${pet}" th:text="${pet}"></option>
+            </select>
             <p th:each="error : ${#fields.errors('petId')}" th:text="${error}" class="error"></p>
         </div>
         <div class="form-group role-selector">

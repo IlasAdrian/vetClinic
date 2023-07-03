@@ -28,10 +28,6 @@ public class AppointmentMapper {
         if (optionalPet.isEmpty()) {
             throw new RuntimeException("No pet found");
         }
-//        Optional<User> optionalUser = userRepository.findById(appointmentDto.getVetId());
-//        if(optionalUser.isEmpty()){
-//            throw new RuntimeException("No vet found");
-//        }
         return Appointment.builder()
                 .pet(optionalPet.get())
                 .type(Type.valueOf(appointmentDto.getType()))
@@ -42,10 +38,14 @@ public class AppointmentMapper {
 
     public AppointmentDto map(Appointment appointment) {
         return AppointmentDto.builder()
+                .id(String.valueOf(appointment.getId()))
                 .petId(String.valueOf(appointment.getPet().getId()))
+                .petName(appointment.getPet().getName())
                 .type(appointment.getType().toString())
                 .description(appointment.getDescription())
                 .status(appointment.getStatus().toString())
+                .date(appointment.getDate()!=null ? String.valueOf(appointment.getDate()) : "")
+                .vetId(appointment.getVet()!=null ? String.valueOf(appointment.getVet().getId()) : "")
                 .build();
     }
 

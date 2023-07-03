@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Appointments</title>
+    <link rel="stylesheet" type="text/css" href="/css/appointmentsStyle.css">
+    <link rel="stylesheet" th:href="@{/css/menuStyle.css}" href="../static/css/menuStyle.css"/>
+</head>
+<body>
+<div th:insert="~{menu.html :: body}"></div>
+<h1 style= "color: black; font-weight: bold;">Appointments</h1>
+
+    <div class="appointment" th:each="appointmentDto : ${dtoAppointments}">
+        <a th:text="${appointmentDto.petId}" th:href="@{/viewPet/{x}(x=${appointmentDto.petId})}"></a>
+        <p class="type" th:text="${appointmentDto.type}"></p>
+        <p class="description" th:text="${appointmentDto.description}"></p>
+        <p class="status" th:text="${appointmentDto.status}"></p>
+        <p class="vetId" th:text="${appointmentDto.vetId}"></p>
+        <p class="date" th:text="${appointmentDto.date}"></p>
+    </div>
+</body>
+</html>

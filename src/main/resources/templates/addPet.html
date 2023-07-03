@@ -13,11 +13,11 @@
 <div class="container">
     <form th:object="${petDto}" action="/addPet" method="post"
           style="max-width: 640px; margin: 0 auto; text-align: left;">
-        <div class="form-group">
-            <label class="form-label" for="ownerEmail">Owner's email</label>
-            <input th:field="*{ownerEmail}" type="email" class="form-control" id="ownerEmail" placeholder="Owner's Email" required>
-            <p th:each="error : ${#fields.errors('ownerEmail')}" th:text="${error}" class="error"></p>
-        </div>
+<!--        <div class="form-group">-->
+<!--            <label class="form-label" for="ownerEmail">Owner's email</label>-->
+<!--            <input th:field="*{ownerEmail}" type="email" class="form-control" id="ownerEmail" placeholder="Owner's Email" required>-->
+<!--            <p th:each="error : ${#fields.errors('ownerEmail')}" th:text="${error}" class="error"></p>-->
+<!--        </div>-->
         <div class="form-group">
             <label class="form-label" for="name">Pet name</label>
             <input th:field="*{name}" type="text" class="form-control" id="name" placeholder="Name" required>

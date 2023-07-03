@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Pets</title>
+    <link rel="stylesheet" type="text/css" href="/css/petsStyle.css">
+    <link rel="stylesheet" th:href="@{/css/menuStyle.css}" href="../static/css/menuStyle.css"/>
+</head>
+<body>
+<div th:insert="~{menu.html :: body}"></div>
+<h1 style= "color: black; font-weight: bold;">Pets</h1>
+
+    <div class="pet" th:each="petDto:${dtoPets}">
+        <a th:text="${petDto.name}" th:href="@{/viewPet/{x}(x=${petDto.petId})}"></a>
+        <p class="specie" th:text="${petDto.specie}"></p>
+        <p class="breed" th:text="${petDto.breed}"></p>
+        <p class="gender" th:text="${petDto.gender}"></p>
+        <p class="dateOfBirth" th:text="${petDto.dateOfBirth}"></p>
+
+
+    </div>
+</body>
+</html>
