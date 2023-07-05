@@ -18,12 +18,14 @@
     <p class="id" th:text="${petId}"></p>
 </div>
 
-<div class="appointment" th:each="dtoAppointment : ${dtoAppointments}">
-    <p class="type" th:text="${dtoAppointment.type}"></p>
-    <p class="description" th:text="${dtoAppointment.description}"></p>
-    <p class="status" th:text="${dtoAppointment.status}"></p>
-    <p class="vetId" th:text="${dtoAppointment.vetId}"></p>
-    <p class="date" th:text="${dtoAppointment.date}"></p>
+<div class="appointment" th:each="appointmentDto : ${dtoAppointments}" >
+    <a class="id" th:text="${appointmentDto.id}" th:href="@{/viewAppointment/{x}(x=${appointmentDto.id})}"></a>
+    <p class="type" th:text="${appointmentDto.type}"></p>
+    <p class="description" th:text="${appointmentDto.description}"></p>
+    <p class="status" th:text="${appointmentDto.status}"></p>
+    <p class="vetId" th:text="${appointmentDto.vetId}"></p>
+    <p class="date" th:text="${appointmentDto.date}"></p>
+    <p class="date" th:text="${appointmentDto.review}"></p>
 </div>
 
 </body>

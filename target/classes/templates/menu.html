@@ -11,10 +11,11 @@
     <ul>
         <li sec:authorize="isAuthenticated()" th:classappend="${requestUrl == '/home' ? 'active' : ''}" ><a href="/home">Home</a></li>
         <li sec:authorize="hasRole('OWNER')" th:classappend="${requestUrl == '/addPet' ? 'active' : ''}" ><a href="/addPet">Add new pet</a></li>
-        <li sec:authorize="hasRole('OWNER')" th:classappend="${requestUrl == '/Pets' ? 'active' : ''}" ><a href="/pets">Pets</a></li>
+        <li sec:authorize="hasRole('OWNER')" th:classappend="${requestUrl == '/pets' ? 'active' : ''}" ><a href="/pets">Pets</a></li>
         <li sec:authorize="hasRole('OWNER')" th:classappend="${requestUrl == '/addAppointment' ? 'active' : ''}" ><a href="/addAppointment">Add an appointment</a></li>
-        <li sec:authorize="hasRole('OWNER')" th:classappend="${requestUrl == '/Appointments' ? 'active' : ''}" ><a href="/appointments">Appointments</a></li>
-        <li sec:authorize="hasRole('VET')" th:classappend="${requestUrl == '/AppointmentList' ? 'active' : ''}" ><a href="/appointmentList">Appointments</a></li>
+        <li sec:authorize="hasRole('OWNER')" th:classappend="${requestUrl == '/appointments' ? 'active' : ''}" ><a href="/appointments">Appointments</a></li>
+        <li sec:authorize="hasRole('VET')" th:classappend="${requestUrl == '/appointmentList' ? 'active' : ''}" ><a href="/appointmentList">Appointments</a></li>
+        <li sec:authorize="hasRole('VET')" th:classappend="${requestUrl == '/viewAppointmentList' ? 'active' : ''}" ><a href="/viewAppointmentList">Your Appointments</a></li>
         <li sec:authorize="isAnonymous()" th:classappend="${requestUrl == '/registration' ? 'active' : ''}" ><a href="/registration">Registration</a></li>
         <li sec:authorize="isAnonymous()" th:classappend="${requestUrl == '/login' ? 'active' : ''}" ><a href="/login">Login</a></li>
         <li sec:authorize="isAuthenticated()" ><a href="/logout">Logout</a></li>

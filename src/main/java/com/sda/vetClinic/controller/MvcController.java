@@ -160,10 +160,16 @@ public class MvcController {
 
     @PostMapping("/viewAppointment/{appointmentId}")
     public String editAppointmentPost(@PathVariable(value = "appointmentId") String appointmentId, String description,
-                                      String status, String date, Model model) {
+                                      String status, String review, String date, Model model) {
         AppointmentDto editDtoAppointment = appointmentService.getAppointmentDtoById(appointmentId);
-        appointmentService.editAppointment(appointmentId, description, status, date);
+        appointmentService.editAppointment(appointmentId, description, status, date, review);
         model.addAttribute("editDtoAppointment", editDtoAppointment);
         return "redirect:/viewAppointment/{appointmentId}";
+    }
+    @GetMapping("/viewAppointmentList")
+    public String viewAppointmentListGet(Model model, Authentication authentication) {
+        List<AppointmentDto> dtoAppointments = appointmentService.getAppointmentDtoListByVetEmail(authentication.getName());
+        model.addAttribute("dtoAppointments", dtoAppointments);
+        return "viewAppointmentList";
     }
 }

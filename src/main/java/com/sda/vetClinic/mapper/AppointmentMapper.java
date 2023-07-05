@@ -33,6 +33,7 @@ public class AppointmentMapper {
                 .type(Type.valueOf(appointmentDto.getType()))
                 .description((appointmentDto.getDescription()))
                 .status(Status.FREE)
+                .review(appointmentDto.getReview())
                 .build();
     }
 
@@ -46,6 +47,7 @@ public class AppointmentMapper {
                 .status(appointment.getStatus().toString())
                 .date(appointment.getDate()!=null ? String.valueOf(appointment.getDate()) : "")
                 .vetId(appointment.getVet()!=null ? String.valueOf(appointment.getVet().getId()) : "")
+                .review(appointment.getReview())
                 .build();
     }
 

@@ -22,9 +22,11 @@ public class SecurityConfig {
             auth.requestMatchers("/menu").permitAll();
             auth.requestMatchers("/login").permitAll();
             auth.requestMatchers("/redirectPage").permitAll();
-            auth.requestMatchers("/home").permitAll();
+
             auth.requestMatchers("/css/*").permitAll();
             auth.requestMatchers("/img/*").permitAll();
+
+            auth.requestMatchers("/home").authenticated();
 
             auth.requestMatchers("/addPet").hasRole("OWNER");
             auth.requestMatchers("/pets").hasRole("OWNER");
@@ -33,6 +35,8 @@ public class SecurityConfig {
 
             auth.requestMatchers("/appointmentList").hasRole("VET");
             auth.requestMatchers("/appointmentList/*").hasRole("VET");
+            auth.requestMatchers("/viewAppointmentList").hasRole("VET");
+
 
             auth.requestMatchers("/viewPet/*").hasAnyRole("OWNER","VET");
             auth.requestMatchers("/viewAppointment/*").hasAnyRole("OWNER","VET");

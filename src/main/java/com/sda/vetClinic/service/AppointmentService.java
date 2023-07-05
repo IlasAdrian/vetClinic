@@ -56,18 +56,26 @@ public class AppointmentService {
         return appointmentMapper.map(appointmentRepository.findById(appointmentId));
     }
 
-    public void editAppointment(String appointmentId, String description, String status, String date) {
+    public void editAppointment(String appointmentId, String description, String status, String date, String review) {
         Appointment appointment = appointmentRepository.findById(appointmentId);
         if (description != null) {
             appointment.setDescription(appointment.getDescription() + "\n" + description);
         }
-        if (!status.equals(String.valueOf(appointment.getStatus()))) {
+        if (status !=null && !status.equals(String.valueOf(appointment.getStatus()))) {
             appointment.setStatus(Status.valueOf(status));
         }
-        if (!date.equals("")) {
+        if (date !=null && !date.equals("")) {
             appointment.setDate((LocalDate.parse(date)));
+        }
+        if(review !=null){
+            appointment.setReview((review));
         }
         appointmentRepository.save(appointment);
 
+    }
+
+    public List<AppointmentDto> getAppointmentDtoListByVetEmail(String vetEmail) {
+        List<Appointment> appointments = appointmentRepository.findByVetEmail(vetEmail);
+        return appointmentMapper.map(appointments);
     }
 }
