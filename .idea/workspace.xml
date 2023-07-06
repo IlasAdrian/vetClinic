@@ -5,28 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8807cee8-089f-44c2-b53c-f83b30c15dc6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/controller/AppointmentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/controller/PetController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/addAppointmentStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/viewAppointmentStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/sda/vetClinic/UserMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/sda/vetClinic/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/config/TODO" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/controller/MvcController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/controller/MvcController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/service/AppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/validator/AppointmentValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/validator/AppointmentValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/validator/PetValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/validator/PetValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/validator/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/validator/UserValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/appointmentsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/appointmentsStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addAppointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addAppointment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addPet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addPet.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewAppointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewAppointment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/controller/MvcController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/controller/MvcController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/mapper/AppointmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/mapper/AppointmentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/mapper/PetMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/mapper/PetMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/repository/AppointmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/repository/AppointmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/repository/PetRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/repository/PetRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/service/PetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/service/PetService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/entity/Appointment$AppointmentBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/entity/Appointment$AppointmentBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/entity/Appointment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/entity/Appointment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/mapper/AppointmentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/mapper/AppointmentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/mapper/PetMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/mapper/PetMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/repository/AppointmentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/repository/AppointmentRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/service/AppointmentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/service/AppointmentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/appointmentsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/appointmentsStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/addAppointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addAppointment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/service/PetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/service/PetService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/validator/AppointmentValidator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/validator/AppointmentValidator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/viewAppointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/viewAppointment.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +79,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Ilas Adrian/IntelliJ/vetClinic/src/main/resources/static/css",
+    "last_opened_file_path": "C:/Users/Ilas Adrian/IntelliJ/AdvancedTesting",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -88,6 +87,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "spring.configuration.checksum": "91d94f5b448f4cea8a6b9fbb755bb2f4",
     "vue.rearranger.settings.migration": "true"
   }
@@ -105,7 +105,71 @@
       <recent name="com.sda.vetClinic.controller" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.VetClinicApplication">
+    <configuration name="UserMapperTest.shouldMapUserDto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vetClinic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sda.vetClinic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sda.vetClinic" />
+      <option name="MAIN_CLASS_NAME" value="com.sda.vetClinic.UserMapperTest" />
+      <option name="METHOD_NAME" value="shouldMapUserDto" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMapperTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vetClinic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sda.vetClinic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sda.vetClinic" />
+      <option name="MAIN_CLASS_NAME" value="com.sda.vetClinic.UserMapperTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.shouldAddUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vetClinic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sda.vetClinic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sda.vetClinic" />
+      <option name="MAIN_CLASS_NAME" value="com.sda.vetClinic.UserServiceTest" />
+      <option name="METHOD_NAME" value="shouldAddUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vetClinic" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sda.vetClinic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.sda.vetClinic" />
+      <option name="MAIN_CLASS_NAME" value="com.sda.vetClinic.UserServiceTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VetClinicApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="vetClinic" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.sda.vetClinic.VetClinicApplication" />
@@ -113,6 +177,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserServiceTest.shouldAddUser" />
+        <item itemvalue="JUnit.UserMapperTest.shouldMapUserDto" />
+        <item itemvalue="JUnit.UserMapperTest.test" />
+        <item itemvalue="JUnit.UserServiceTest.test1" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -132,7 +204,7 @@
       <workItem from="1688048259956" duration="12159000" />
       <workItem from="1688383004707" duration="30335000" />
       <workItem from="1688480587157" duration="12871000" />
-      <workItem from="1688574085968" duration="8714000" />
+      <workItem from="1688574085968" duration="18213000" />
     </task>
     <servers />
   </component>

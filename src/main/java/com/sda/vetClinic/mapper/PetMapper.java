@@ -1,8 +1,6 @@
 package com.sda.vetClinic.mapper;
 
 import com.sda.vetClinic.dto.PetDto;
-import com.sda.vetClinic.dto.UserDto;
-import com.sda.vetClinic.entity.Appointment;
 import com.sda.vetClinic.entity.Pet;
 import com.sda.vetClinic.entity.User;
 import com.sda.vetClinic.enums.Gender;
