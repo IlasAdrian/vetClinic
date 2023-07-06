@@ -29,4 +29,5 @@ public class Appointment {
     @JoinColumn
     private User vet;
     private LocalDate date;
+    private String review;
 }

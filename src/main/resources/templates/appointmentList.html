@@ -8,29 +8,31 @@
 </head>
 <body>
 <div th:insert="~{menu.html :: body}"></div>
-<h1 style= "color: black; font-weight: bold;">Appointments</h1>
+<h1 style="color: black; font-weight: bold;">Appointments</h1>
 
-    <div class="appointment" th:each="appointmentDto : ${dtoAppointments}">
-        <a class="id" th:text="${appointmentDto.id}" th:href="@{/viewAppointment/{x}(x=${appointmentDto.id})}"></a>
-        <p class="petId" th:text="${appointmentDto.petId}"></p>
-        <p class="petName"th:text="${appointmentDto.petName}"></p>
-        <p class="type" th:text="${appointmentDto.type}"></p>
-        <p class="description" th:text="${appointmentDto.description}"></p>
-        <p class="status" th:text="${appointmentDto.status}"></p>
-        <p class="vetId" th:text="${appointmentDto.vetId}"></p>
-        <p class="date" th:text="${appointmentDto.date}"></p>
+<div class="appointment" th:each="appointmentDto : ${dtoAppointments}" th:if="${appointmentDto.status == 'FREE'}">
+    <a class="id" th:text="${appointmentDto.id}" th:href="@{/viewAppointment/{x}(x=${appointmentDto.id})}"></a>
+    <p class="petId" th:text="${appointmentDto.petId}"></p>
+    <p class="petName" th:text="${appointmentDto.petName}"></p>
+    <p class="type" th:text="${appointmentDto.type}"></p>
+    <p class="description" th:text="${appointmentDto.description}"></p>
+    <p class="status" th:text="${appointmentDto.status}"></p>
+    <p class="vetId" th:text="${appointmentDto.vetId}"></p>
+    <p class="date" th:text="${appointmentDto.date}"></p>
+    <p class="description" th:text="${appointmentDto.review}"></p>
 
-        <p class="text">Schedule appointment:</p>
-        <form th:object="${editDtoAppointment}" th:action="@{/appointmentList/{x}(x=${appointmentDto.id})}" method="post"
-              style="max-width: 640px; margin: 0 auto; text-align: left;">
-            <div class="form-group">
-                <label class="form-label" for="date">Date</label>
-                <input th:field="*{date}" type="date" class="form-control" id="date" placeholder="date">
-            </div>
-            <div class="form-group button-container">
-                <button type="submit">Add date</button>
-            </div>
-        </form>
-    </div>
+    <p class="text">Schedule appointment:</p>
+    <form th:object="${editDtoAppointment}" th:action="@{/appointmentList/{x}(x=${appointmentDto.id})}"
+          method="post"
+          style="max-width: 640px; margin: 0 auto; text-align: left;">
+        <div class="form-group">
+            <label class="form-label" for="date">Date</label>
+            <input th:field="*{date}" type="date" class="form-control" id="date" placeholder="date">
+        </div>
+        <div class="form-group button-container">
+            <button type="submit">Add date</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>

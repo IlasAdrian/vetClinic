@@ -12,4 +12,6 @@ public interface AppointmentRepository extends CrudRepository<Appointment, Long>
 
     List<Appointment> findByPetId(String petId);
     Appointment findById(String id);
+
+    List<Appointment> findByVetEmail(String vetEmail);
 }

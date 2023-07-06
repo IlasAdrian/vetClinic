@@ -192,8 +192,4 @@ public class UserValidator {
                 bindingResult.addError(fieldError);
         }
     }
-    public Boolean validateUniqueEmail(UserDto userDto) {
-        Optional<User> optionalUser = userRepository.findByEmail(userDto.getEmail());
-        return optionalUser.isPresent();
-    }
 }

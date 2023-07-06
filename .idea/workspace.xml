@@ -5,45 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8807cee8-089f-44c2-b53c-f83b30c15dc6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/viewAppointment.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/controller/AppointmentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/controller/PetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/addAppointmentStyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/viewAppointmentStyle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/config/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/config/TODO" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/config/TODO" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/controller/MvcController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/controller/MvcController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/controller/RestControllerExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/dto/AppointmentDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/dto/AppointmentDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/dto/PetDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/dto/PetDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/entity/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/entity/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/entity/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/entity/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/mapper/AppointmentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/mapper/AppointmentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/mapper/PetMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/mapper/PetMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/repository/AppointmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/repository/AppointmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/repository/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/service/AppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/validator/AppointmentValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/validator/AppointmentValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/validator/PetValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/validator/PetValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/validator/UserValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sda/vetClinic/validator/UserValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/appointmentsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/appointmentsStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/petsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/petsStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/appointmentList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/appointmentList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/appointments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/appointments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/pets.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/pets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addAppointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addAppointment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/addPet.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/addPet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/viewAppointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/viewAppointment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/controller/MvcController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/controller/MvcController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/controller/RestControllerExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/dto/AppointmentDto$AppointmentDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/dto/AppointmentDto$AppointmentDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/dto/AppointmentDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/dto/AppointmentDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/entity/Pet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/entity/Pet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/mapper/AppointmentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/mapper/AppointmentMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/mapper/PetMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/mapper/PetMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/repository/AppointmentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/repository/AppointmentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/repository/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/service/AppointmentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/service/AppointmentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sda/vetClinic/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/appointmentsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/appointmentsStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/petsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/petsStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/appointmentList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/appointmentList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/appointments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/appointments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/pets.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/pets.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/addAppointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/addAppointment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/viewAppointment.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/viewAppointment.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,9 +39,9 @@
       <list>
         <option value="Interface" />
         <option value="CSS File" />
-        <option value="Class" />
         <option value="Enum" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -96,7 +80,7 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Ilas Adrian/IntelliJ/SpringDemo",
+    "last_opened_file_path": "C:/Users/Ilas Adrian/IntelliJ/vetClinic/src/main/resources/static/css",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -114,8 +98,8 @@
       <recent name="C:\Users\Ilas Adrian\IntelliJ\vetClinic\src\main\resources\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Ilas Adrian\IntelliJ\vetClinic\src\main\java\com\sda\vetClinic\config" />
       <recent name="C:\Users\Ilas Adrian\IntelliJ\vetClinic\src\main\resources\static\img" />
+      <recent name="C:\Users\Ilas Adrian\IntelliJ\vetClinic\src\main\java\com\sda\vetClinic\config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.sda.vetClinic.controller" />
@@ -147,6 +131,8 @@
       <workItem from="1688044351023" duration="3886000" />
       <workItem from="1688048259956" duration="12159000" />
       <workItem from="1688383004707" duration="30335000" />
+      <workItem from="1688480587157" duration="12871000" />
+      <workItem from="1688574085968" duration="8714000" />
     </task>
     <servers />
   </component>

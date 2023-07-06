@@ -18,4 +18,5 @@ public class AppointmentDto {
     private String status;
     private String vetId;
     private String date;
+    private String review;
 }
