@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ViewAppointment</title>
-    <link rel="stylesheet" type="text/css" href="/css/viewPetStyle.css">
+    <link rel="stylesheet" type="text/css" href="/css/viewAppointmentStyle.css">
     <link rel="stylesheet" th:href="@{/css/menuStyle.css}" href="../static/css/menuStyle.css"/>
 </head>
 <body>
@@ -38,7 +38,8 @@
             <button type="submit">Modify appointment</button>
         </div>
     </form>
-    <form th:if="${appointmentDto.status == 'DONE' && appointmentDto.review == null}"
+
+    <form th:if="${appointmentDto.status == 'DONE' && appointmentDto.review == null && isOwner}"
           sec:authorize="hasRole('OWNER')" th:object="${editDtoAppointment}"
           th:action="@{/viewAppointment/{x}(x=${appointmentDto.id})}" method="post">
             <div>

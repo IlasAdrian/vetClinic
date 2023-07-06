@@ -2,9 +2,11 @@ package com.sda.vetClinic.service;
 
 import com.sda.vetClinic.dto.AppointmentDto;
 import com.sda.vetClinic.entity.Appointment;
+import com.sda.vetClinic.entity.Pet;
 import com.sda.vetClinic.enums.Status;
 import com.sda.vetClinic.mapper.AppointmentMapper;
 import com.sda.vetClinic.repository.AppointmentRepository;
+import com.sda.vetClinic.repository.PetRepository;
 import com.sda.vetClinic.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,8 @@ public class AppointmentService {
     private AppointmentRepository appointmentRepository;
     @Autowired
     private UserRepository userRepository;
+    @Autowired
+    private PetRepository petRepository;
 
     public void addAppointment(AppointmentDto appointmentDto) {
         Appointment appointment = appointmentMapper.map(appointmentDto);
@@ -77,5 +81,13 @@ public class AppointmentService {
     public List<AppointmentDto> getAppointmentDtoListByVetEmail(String vetEmail) {
         List<Appointment> appointments = appointmentRepository.findByVetEmail(vetEmail);
         return appointmentMapper.map(appointments);
+    }
+    public  boolean isOwner(String authEmail, String petId){
+        Optional<Pet> optionalPet = petRepository.findById(petId);
+        if(optionalPet.isEmpty()){
+            return false;
+        }
+        Pet pet = optionalPet.get();
+        return authEmail.equals(pet.getOwner().getEmail());
     }
 }
