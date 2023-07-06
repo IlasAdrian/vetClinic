@@ -1,10 +1,8 @@
 package com.sda.vetClinic.mapper;
 
 import com.sda.vetClinic.dto.AppointmentDto;
-import com.sda.vetClinic.dto.PetDto;
 import com.sda.vetClinic.entity.Appointment;
 import com.sda.vetClinic.entity.Pet;
-import com.sda.vetClinic.entity.User;
 import com.sda.vetClinic.enums.Status;
 import com.sda.vetClinic.enums.Type;
 import com.sda.vetClinic.repository.PetRepository;
@@ -12,7 +10,6 @@ import com.sda.vetClinic.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
